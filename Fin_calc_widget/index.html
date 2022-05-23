@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <script src="https://cdn.syncfusion.com/ej2/dist/ej2.min.js" type="text/javascript"></script>
+    <script src="app.js" type="text/javascript"></script>
+    
+    <title>Financial Calculator Widget</title> 
+</head>
+<body>
+
+
+
+    <h1 style="text-align:center; color:purple;">Calculate your rewards</h1>
+    <div style="text-align: center;">
+        <p>Vendor/Bills <input type="number" placeholder="Enter a number" id="vendor" style="margin-left:15px;"></p>
+        
+        <p>Media/Ad Spend <input type="number" placeholder="Enter a number" id="media" style="margin-left:15px;"></p>
+        
+        <p>Corp Spend <input type="number" placeholder="Enter a number" id="corp"style="margin-left:15px;"></p>
+        
+        <p>Team Project <input type="number" placeholder="Enter a number" id="team" style="margin-left:15px;"></p>
+        
+    </div>
+
+    <h1 style="text-align:center; color:purple;">Compare your rewards</h1>
+    <div style="text-align:center; margin-bottom: 10px;" >
+        
+
+            <input type="submit" value="Brex" id="brex" style="display: inline-block; text-align: center; width:50; height:50;" style="margin:30px;">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/f/f8/Brex_logo_black.svg" id="brx_logo"  width="50" height="15" style="display:none; text-align: center;">
+        
+
+            <input type="submit" value="Stripe" id="stripe" style="display: inline-block; text-align: center; width:50; height:50; margin-left:15px; margin-right:15px;">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Stripe_Logo%2C_revised_2016.svg" id="strp_logo" width="50" height="25" style="display:none; text-align: center; margin-left:15px; margin-right:15px;">
+        
+
+       
+            <input type="submit" value="Amex" id="amex" style="display: inline-block; text-align: center; width:50; height:50;" style="margin:30px;">
+            <img src="https://www.pngmart.com/files/13/American-Express-Logo-PNG-File.png" id="mx_logo" style="display:none; text-align: center;" width="70" height="35" >
+        
+
+    </div>
+<div style="text-align: center   ">
+    <div style="display: none;" id="1">
+        
+        <p id="brx"></p>
+        
+    </div>
+    <div style="display: none;" id="2">
+        <p id="strp"></p>
+    </div>
+    <div style="display: none;" id="3">
+        <p id="mx"></p>
+    </div>
+
+    <div id="4">
+        <p id="unlimited">Unlimited Rewards: $0</p>
+        <p id="lifetime">Lifetime Rewards: $0</p>
+    </div>
+</div>
+<script>
+
+    
+    
+    document.getElementById('brex').addEventListener("click", function() {
+
+        var values=[
+            document.getElementById('vendor').value,
+            document.getElementById('media').value,
+            document.getElementById('corp').value,
+            document.getElementById('team').value
+        ];
+        var sum= eval(values.join('+'));
+        console.log(sum);
+
+        document.getElementById('brx').innerText = `Brex Business Card: $${Number(sum*0.3).toFixed(2)}`;
+        document.getElementById('unlimited').innerText = `Unlimited Rewards: $${Number(sum*1.1).toFixed(2)}`;
+        document.getElementById('lifetime').innerText = `Lifetime Rewards: $${Number(sum*1.2).toFixed(2)}`;
+        document.getElementById('1').style.display = 'block';
+        document.getElementById('2').style.display = 'none';
+        document.getElementById('3').style.display = 'none';
+
+        document.getElementById('brex').style.display = 'none';
+        document.getElementById('stripe').style.display = 'inline-block';
+        document.getElementById('amex').style.display = 'inline-block';
+
+        document.getElementById('brx_logo').style.display = 'inline-block';
+        document.getElementById('strp_logo').style.display = 'none';
+        document.getElementById('mx_logo').style.display = 'none';
+
+        
+
+
+    });
+    
+    document.getElementById('stripe').addEventListener("click", function() {
+        var values=[
+            document.getElementById('vendor').value,
+            document.getElementById('media').value,
+            document.getElementById('corp').value,
+            document.getElementById('team').value
+        ];
+        var sum= eval(values.join('+'));
+        console.log(sum);
+
+        document.getElementById('strp').innerText = `Stripe Business Card: $${Number(sum*2.9).toFixed(2)}`;
+        document.getElementById('unlimited').innerText = `Unlimited Rewards: $${Number(sum*1.1).toFixed(2)}`;
+        document.getElementById('lifetime').innerText = `Lifetime Rewards: $${Number(sum*1.2).toFixed(2)}`;
+        document.getElementById('2').style.display = 'block';
+        document.getElementById('1').style.display = 'none';
+        document.getElementById('3').style.display = 'none';
+
+        document.getElementById('brex').style.display = 'inline-block';
+        document.getElementById('stripe').style.display = 'none';
+        document.getElementById('amex').style.display = 'inline-block';
+
+        document.getElementById('brx_logo').style.display = 'none';
+        document.getElementById('strp_logo').style.display = 'inline-block';
+        document.getElementById('mx_logo').style.display = 'none';
+
+
+    });
+    
+    document.getElementById('amex').addEventListener("click", function() {
+        var values=[
+            document.getElementById('vendor').value,
+            document.getElementById('media').value,
+            document.getElementById('corp').value,
+            document.getElementById('team').value
+        ];
+        var sum= eval(values.join('+'));
+        console.log(sum);
+
+        document.getElementById('mx').innerText = `Amex Business Card: $${Number(sum*1.3).toFixed(2)}`;
+        document.getElementById('unlimited').innerText = `Unlimited Rewards: $${Number(sum*1.1).toFixed(2)}`;
+        document.getElementById('lifetime').innerText = `Lifetime Rewards: $${Number(sum*1.2).toFixed(2)}`;
+        document.getElementById('3').style.display = 'block';
+        document.getElementById('1').style.display = 'none';
+        document.getElementById('2').style.display = 'none';
+
+        document.getElementById('brex').style.display = 'inline-block';
+        document.getElementById('stripe').style.display = 'inline-block';
+        document.getElementById('amex').style.display = 'none';
+
+        document.getElementById('brx_logo').style.display = 'none';
+        document.getElementById('strp_logo').style.display = 'none';
+        document.getElementById('mx_logo').style.display = 'inline-block';
+
+
+    });
+    
+</script>
+    
+</body>
+</html>
