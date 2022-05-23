@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+
+<body>
+
+<h1> Test Payments Second Account</h1>
+
+<!-- Required div to display paymob checkout button inside, with any id to be passed in mount() method. ! -->
+<div id="paymob-checkout" class="text-center"></div>
+<!-- Loading paymob.js SDK -->
+<script src="https://flashjs.paymob.com/v1/paymob.js"></script>
+<script>
+    fetch("https://flash-dj.herokuapp.com/secret_sec/").then(function (response) {
+        return response.json();
+    }).then(function (json) {
+        // client_secret is your customer reference for the created intention, and it's used for one time only.
+        Paymob("pk_test_yv0A8MaVGi28WDHi3AZsOLiZJIgzNH15").checkoutButton(json.client_secret).mount("#paymob-checkout");
+    }).catch(function (err) {
+        console.error(err);
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+<body>
+
+<h1> Live Payments with 1 EGP </h1>
+
+<!-- Required div to display paymob checkout button inside, with any id to be passed in mount() method. ! -->
+<div id="paymob-checkout" class="text-center"></div>
+<!-- Loading paymob.js SDK -->
+<script src="https://flashjs.paymob.com/v1/paymob.js"></script>
+<script>
+    fetch("http://localhost:8000/secret_live/").then(function (response) {
+        return response.json();
+    }).then(function (json) {
+        // client_secret is your customer reference for the created intention, and it's used for one time only.
+        Paymob("pk_live_FoJ0OjUC6kMTu0lZE77U3jO5HZJBODyj").checkoutButton(json.client_secret,{
+            //method: "card-auth",
+            payment_method_id: 1982361,
+        }).mount("#paymob-checkout");
+    }).catch(function (err) {
+        console.error(err);
+    });
+</script>
+</body>
+</html>
