@@ -1,7 +1,7 @@
 import paymob
 from paymob.logging import log
 
-paymob.secret_key= "sk_test_fc9856532ebc5c8b24a6c01721fb95132b3e9b477154c15b1ae533b702c2491c"
+paymob.secret_key= "secret_key"
 
 def secret():
     intent = paymob.accept.Intention.create(
