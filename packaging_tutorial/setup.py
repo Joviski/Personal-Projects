@@ -4,16 +4,16 @@ with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="flash-paymob",
+    name="flash-test",
     version="1.0.1",
     author="Paymob",
     author_email="test@test.com",
-    description="Paymob FLASH SDK",	
+    description="test FLASH SDK",	
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/PaymobAccept/paymob-python",
+    url="url_to_sdk",
     project_urls={
-        "Documentation": "https://docs.paymob.com",
+        "Documentation": "https://docs.com",
     },
     classifiers=[
         "Programming Language :: Python :: 3",
