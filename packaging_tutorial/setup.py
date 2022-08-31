@@ -7,7 +7,7 @@ setuptools.setup(
     name="flash-paymob",
     version="1.0.1",
     author="Paymob",
-    author_email="menessy@paymob.com",
+    author_email="test@test.com",
     description="Paymob FLASH SDK",	
     long_description=long_description,
     long_description_content_type="text/markdown",
