@@ -1,5 +1,0 @@
-TestPyPi Token:
-
-[testpypi]
-  username = __token__
-  password = pypi-AgENdGVzdC5weXBpLm9yZwIkYTc3ODVlNzctNDVlNS00MjZkLWE5YTItYzRhM2E4OGRmNzk2AAIleyJwZXJtaXNzaW9ucyI6ICJ1c2VyIiwgInZlcnNpb24iOiAxfQAABiBQykmd4qK18ZNhu4RGx74L_U5GnBMgXu_cB4kgIrqsXg
